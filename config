@@ -1,16 +1,16 @@
 Host bastion
-	Hostname  {점프 서버의 퍼블릭 IP}
+	Hostname  52.192.139.33
 	User ec2-user
-	IdentityFile ~\.ssh\{키파일.pem}
+	IdentityFile ~\.ssh\cloud.pem
 
 Host web01
-	Hostname {웹 서버 01의 프라이빗 IP}
+	Hostname 10.0.65.123
 	User ec2-user
-	IdentityFile ~\.ssh\{키파일.pem}
+	IdentityFile ~\.ssh\cloud.pem
 	ProxyCommand ssh.exe bastion -W %h:%p
 
 Host web02
-	Hostname {웹 서버 01의 프라이빗 IP}
+	Hostname 10.0.95.166
 	User ec2-user
-	IdentityFile ~\.ssh\{키파일.pem}
+	IdentityFile ~\.ssh\cloud.pem
 	ProxyCommand ssh.exe bastion -W %h:%p
